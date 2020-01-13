@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.FaceImageActivity">
+
+    <TextView
+        android:id="@+id/tvTitleMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Toma 3 selfies con distinta iluminacíon"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llPhoto1"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        android:background="@drawable/linear_border"
+        app:layout_constraintEnd_toStartOf="@+id/llPhoto2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleMessage">
+
+
+        <ImageView
+            android:id="@+id/ivPhoto1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            app:srcCompat="@drawable/ic_add_photo" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llPhoto2"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        android:background="@drawable/linear_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/llPhoto1"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleMessage">
+
+        <ImageView
+            android:id="@+id/ivPhoto2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            app:srcCompat="@drawable/ic_add_photo" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        android:background="@drawable/linear_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llPhoto1">
+
+        <ImageView
+            android:id="@+id/ivPhoto3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            app:srcCompat="@drawable/ic_add_photo" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btTrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Procesar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btTrain" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
