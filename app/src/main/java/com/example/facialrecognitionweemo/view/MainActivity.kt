@@ -3,7 +3,6 @@ package com.example.facialrecognitionweemo.view
 import android.Manifest
 import android.app.Activity
 import android.app.DatePickerDialog
-import android.app.Dialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -16,7 +15,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
 import com.example.facialrecognitionweemo.R
 import com.example.facialrecognitionweemo.model.Data
@@ -44,16 +42,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         component = app.component.plus(MainActivityModule())
 
-
-
         viewModel.model.observe(this, Observer(::updateUi))
 
         btAccept.setOnClickListener(this)
         etDate.setOnClickListener(this)
-
-
-//            val intent = Intent(this, FaceImageActivity::class.java)
-//            startActivity(intent)
 
 
         if (!CameraPermissionHelper.hasCameraPermission(this)) {
@@ -264,9 +256,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
 
-            data.notNull { DataResponse -> {
-
-            }
+            data.notNull { DataResponse ->
+                if (DataResponse.code == 200) {
+                    val intent = Intent(this@MainActivity, FaceImageActivity::class.java)
+                    startActivity(intent)
+                }
 
             }
 
